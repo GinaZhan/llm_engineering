@@ -34,6 +34,7 @@ llm = ChatOpenAI(temperature=0, model_name=MODEL)
 def fetch_context(question: str) -> list[Document]:
     """
     Retrieve relevant context documents for a question.
+    k decides how many chunks to return.
     """
     return retriever.invoke(question, k=RETRIEVAL_K)
 
